@@ -6,7 +6,7 @@ export const fetchWeather = (city) => async (dispatch) => {
   dispatch({ type: FETCH_WEATHER_REQUEST });
 
   try {
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=128296f88b584ba7ab6162121240702&q=${city}&aqi=no`);
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=128296f88b584ba7ab6162121240702&q=${city}&aqi=no`);
     const data = await response.json();
     console.log("Fetched weather data:", data);
     dispatch({ type: FETCH_WEATHER_SUCCESS, payload: data });
